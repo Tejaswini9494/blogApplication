@@ -42,8 +42,8 @@ router.post(
    "/create",
    passport.authenticate("jwt", { session: false }),
    (req, res) => {
-      const author = req.body.user;
-      const post = req.body.data;
+      const author = req.user.user_name;
+      const post = req.body;
       const { errors, isValid } = validatePostInput(post);
       if (!isValid) {
          return res.status(400).json(errors);
@@ -57,10 +57,6 @@ router.post(
    }
 );
 
-
-router.get("/sanity" , (req,res) => {
-   res.send("backend is working");
-})
 // @route - PUT api/posts/update/:id
 // @desc - updates an existing post
 // @access - private
