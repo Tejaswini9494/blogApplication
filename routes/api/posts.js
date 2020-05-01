@@ -42,8 +42,8 @@ router.post(
    "/create",
    passport.authenticate("jwt", { session: false }),
    (req, res) => {
-      const author = req.user.user_name;
-      const post = req.body;
+      const author = req.body.user;
+      const post = req.body.data;
       const { errors, isValid } = validatePostInput(post);
       if (!isValid) {
          return res.status(400).json(errors);
