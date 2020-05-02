@@ -19,7 +19,7 @@ const post = {
 
     date : {
         type : Date,
-        required : Date.now
+        default : Date.now
     }
 };
 const PostSchema = new Schema(post);
