@@ -12,7 +12,7 @@
   },
   "author": "",
   "license": "ISC",
-  "proxy": "http://localhost:5000",
+  
   "eslintConfig": {
     "extends": "react-app"
   },
